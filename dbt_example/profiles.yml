@@ -1,0 +1,15 @@
+dbt_example:
+  outputs:
+    dev:
+      type: bigquery
+      method: service-account
+      keyfile: /Users/Inacio Azevedo/.dbt/athena-502413-97f1f3e2ca79.json
+      project: athena-502413  # The GCP project where your data lives
+      dataset: "{{ env_var('DBT_DBNAME', 'dbt') }}"            # The BigQuery dataset where dev tables are outputted
+      threads: 4
+      timeout_seconds: 300
+      location: US                  # e.g., US, EU, or us-central1
+      priority: interactive
+  target: dev
+
+
