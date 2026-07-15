@@ -32,20 +32,20 @@ clean-targets:         # directories to be removed by `dbt clean`
 models:
   dbt_example:
     staging:
-      schema: staging
-      materialized: table
-      tags: ['staging']
+      +schema: staging
+      +materialized: table
+      +tags: ['staging']
     
     intermediate:
-      materialized: ephemeral
-      tags: ['intermediate']
+      +materialized: ephemeral
+      +tags: ['intermediate']
 
     marts:
-      schema: marts
-      materialized: table
-      tags: ['marts']
+      +schema: marts
+      +materialized: table
+      +tags: ['marts']
 
 seeds:
   dbt_example:
     +schema: seeds
-    tags: ['seeds']
+    +tags: ['seeds']
