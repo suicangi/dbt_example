@@ -1,0 +1,13 @@
+version: 2
+
+models:
+  - name: vendas
+    description: "Modelo de vendas"
+    columns:
+      - name: total_vendas
+        tests:
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 0
+              max_value: 10000
+
+  

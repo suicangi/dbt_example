@@ -1,0 +1,18 @@
+version: 2
+
+models:
+  - name: clientes
+    description: "Tabela com os clientes da empresa"
+    columns:
+      - name: email
+        description: "Email do cliente"
+        tests:
+          - valid_email
+  
+  - name: clientes
+    description: "Tabela com os clientes da empresa"
+    columns:
+      - name: id_cliente
+        description: "ID do cliente"  
+        tests:
+          - has_sales
